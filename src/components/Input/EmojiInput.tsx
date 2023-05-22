@@ -14,7 +14,7 @@ type Props = {
       <div flex p-8px gap-x-16px overflow-auto text="#999">
         {emojis.map(emoji =>
           <span whitespace-nowrap key={emoji.name}
-            className={emoji.name === emojiKind ? s.selectedTag : ''}
+          className={emoji.name === emojiKind ? s.selectedTab : ''}
             onClick={() => setEmojiKind(emoji.name)}>{emoji.name}</span>
         )}
       </div>
