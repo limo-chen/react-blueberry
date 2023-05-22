@@ -48,6 +48,7 @@ const defaultTimeRanges: { key: TimeRange; text: string }[] = [
       })
     }
     const { popup, show } = usePopup({
+      zIndex: 'var(--z-dialog)',
       children: <div onClick={onConfirm}>
       <header text-18px bg="[var(--color-purple)]" text-white py-13px p-l-16px>请选择时间</header>
       <main p-16px>
