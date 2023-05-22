@@ -21,8 +21,8 @@ export const ItemsPage: React.FC = () => {
   })
  
       const { visible, setVisible } = useMenuStore()
-      const { start, end } = timeRangeToStartAndEnd(timeRange)
-    return (
+      const { start, end } = timeRange
+      return (
     <div>
       <Gradient>
         <TopNav title="账目列表" icon={
@@ -31,6 +31,9 @@ export const ItemsPage: React.FC = () => {
         } />
         </Gradient>
         <TimeRangePicker selected={timeRange} onSelect={setTimeRange} />
+        <div>
+        {start.isoString} | {end.isoString}
+      </div>
       <ItemsSummary />
       <ItemsList start={start} end={end} />
       <AddItemFloatButton />
