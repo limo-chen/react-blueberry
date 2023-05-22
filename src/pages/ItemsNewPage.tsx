@@ -45,7 +45,7 @@ export const ItemsNewPage: React.FC = () => {
   return (
     <div className={s.wrapper} h-screen flex flex-col onSubmit={onSubmit}>
     <Gradient className="grow-0 shrink-0">
-      <TopNav title="记一笔" icon={<BackIcons />} />
+      <TopNav title="记一笔" icon={<BackIcon />} />
     </Gradient>
     <Tabs tabItems={tabItems} className="text-center grow-1 shrink-1 overflow-hidden"
         classPrefix='itemsNewPage'
