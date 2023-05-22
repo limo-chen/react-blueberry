@@ -13,9 +13,9 @@ import { Tags } from './ItemsNewPage/Tags'
 
 type ItemKind = 'income' | 'expenses'
 export const ItemsNewPage: React.FC = () => {
-    const { data, error, setData, setError } = useCreateItemStore()
+    const { data, setData, setError } = useCreateItemStore()
     const tabItems: { key: Item['kind']; text: string; element?: ReactNode }[] = [
-        { // JetBrains Mono
+        { 
           key: 'expenses', text: '支出', element:
             <Tags kind="expenses" value={data.tag_ids} onChange={(ids) => setData({ tag_ids: ids })} />
         },
