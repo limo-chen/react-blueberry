@@ -7,6 +7,7 @@ import { useLoadingStore } from '../stores/useLoadingStore'
 axios.defaults.baseURL = isDev ? '/' : 'http://121.196.236.94:8080/api/v1'
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 axios.defaults.timeout = 10000
+
 // 动态配置项用拦截器来配置
 axios.interceptors.request.use((config) => {
   const jwt = localStorage.getItem('jwt') || ''
