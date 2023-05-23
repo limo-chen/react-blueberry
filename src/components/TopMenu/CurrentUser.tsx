@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import useSWR from 'swr'
 import { useAjax } from '../../lib/ajax'
-import { confirmable } from '../../lib/confirmable'
+import { comfirmable } from '../../lib/comfirmable'
 
 interface Props {
   className?: string
@@ -14,7 +14,7 @@ export const CurrentUser: React.FC<Props> = ({ className }) => {
   const name = me?.name ?? me?.email
   const loc = useLocation()
   const from = encodeURIComponent(`${loc.pathname}${loc.search}`)
-  const signOut = confirmable('确定要退出登录吗？', () => {
+  const signOut = comfirmable('确定要退出登录吗？', () => {
     window.localStorage.removeItem('jwt')
     window.location.reload()
   })
