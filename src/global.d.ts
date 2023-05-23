@@ -24,14 +24,13 @@ type Item = {
   amount: number
   note?: string
   tag_ids: number[]
+  tags?: Tag[]
   happen_at: string
   created_at: string
   updated_at: string
   kind: 'expenses' | 'income'
   deleted_at?: string
 }
-
-
 type Tag = {
   id: number
   kind: Item['kind']

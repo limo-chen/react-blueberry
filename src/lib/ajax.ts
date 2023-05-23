@@ -47,6 +47,12 @@ export const useAjax = (options?: Options) => {
     }
     throw error
   }
+  const destroy = <T>(path: string) => {
+    if (showLoading) { setVisible(true) }
+    return ajax.delete<T>(path).catch(onError).finally(() => {
+      if (showLoading) { setVisible(false) }
+    })
+  };
   return {
     get: <T>(path: string, config?: AxiosRequestConfig<any>) => {
       if (showLoading) { setVisible(true) }
@@ -66,5 +72,6 @@ export const useAjax = (options?: Options) => {
         if (showLoading) { setVisible(false) }
       })
     },
+    destroy
   }
 }
