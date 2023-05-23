@@ -42,6 +42,8 @@ useEffect(() => {
   myChart.current?.setOption(option)
 }, [items])
   return (
+    <>
     <div ref={div} className={className}></div>
+  </>
   )
 }
